@@ -1,10 +1,7 @@
 import { createBrowserRouter } from 'react-router';
 
 import { RootLayout } from '@app/layout';
-import { HomePage, BodySurveyPage } from '@pages/home';
-import { PostPage } from '@pages/post';
-import { MyPage } from '@pages/my';
-import { OnboardingPage } from '@pages/onboarding';
+import { ManageCustomerPage } from "@pages/manage/ManageCustomerPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -13,28 +10,8 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
-      },
-      {
-        path: 'home',
-        element: <HomePage />,
-      },
-      {
-        path: 'post',
-        element: <PostPage />,
-      },
-      {
-        path: 'my',
-        element: <MyPage />,
+        element: <ManageCustomerPage />,
       },
     ],
   },
-  {
-    path: '/onboarding',
-    element: <OnboardingPage />,
-  },
-  {
-    path: 'body-survey',
-    element: <BodySurveyPage />
-  }
 ]);
