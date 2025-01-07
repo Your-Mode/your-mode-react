@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from "react-router";
 
 interface CustomerProps {
   id: number;
@@ -7,9 +8,15 @@ interface CustomerProps {
 }
 
 const CustomerItem = ({ id, name, birth }: CustomerProps) => {
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate(`/customer/${id}`);
+  }
+
   return (
     <>
-      <CustomerContainer onClick={() => console.log(id)}>
+      <CustomerContainer onClick={handleNavigate}>
         <ProfileImage />
         <TextContainer>
           <CustomerName>{name}</CustomerName>
