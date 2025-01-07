@@ -26,7 +26,8 @@
       "@app/*": ["app/*"],
       "@pages/*": ["pages/*"],
       "@shared/*": ["shared/*"],
-      "@icon/*": ["shared/assets/icon/*"]
+      "@icon/*": ["shared/assets/icon/*"],
+      "@img/*": ["shared/assets/img/*"],
     }
   },
   "include": ["src"]
