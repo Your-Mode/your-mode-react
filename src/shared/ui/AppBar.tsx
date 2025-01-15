@@ -5,13 +5,14 @@ interface AppBarProps {
   title?: string;
   leftHeaderAction: HeaderAction;
   rightHeaderActionArr?: HeaderAction[];
+  isClear?: boolean;
 }
 
-const AppBar = ({ title, leftHeaderAction, rightHeaderActionArr }: AppBarProps) => {
+const AppBar = ({ title, leftHeaderAction, rightHeaderActionArr, isClear }: AppBarProps) => {
   const { icon, onClick } = leftHeaderAction;
 
   return (
-    <Wrapper>
+    <Wrapper isClear={isClear}>
       <img
         src={icon}
         onClick={onClick ? onClick : undefined}
@@ -36,7 +37,7 @@ const AppBar = ({ title, leftHeaderAction, rightHeaderActionArr }: AppBarProps) 
 
 export default AppBar;
 
-const Wrapper = styled.header`
+const Wrapper = styled.header<Pick<AppBarProps, 'isClear'>>`
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -45,6 +46,7 @@ const Wrapper = styled.header`
   min-height: 5.4vh;
   align-items: center;
   padding: 12px 18px;
+  background-color: ${({ isClear }) => (isClear ? 'transparent' : 'white')};
 
   img {
     flex-shrink: 0;

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router';
 
 import { RootLayout } from '@app/layout';
-import { ManageCustomerPage } from "@pages/manage/ui/ManageCustomerPage.tsx";
+import { ManageCustomerPage, AddMyCustomerPage, CustomerDetailPage } from "@pages/manage/ui";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +12,14 @@ export const router = createBrowserRouter([
         index: true,
         element: <ManageCustomerPage />,
       },
+      {
+        path: 'add-customer',
+        element: <AddMyCustomerPage />
+      },
+      {
+        path: 'customer/:id',
+        element: <CustomerDetailPage />
+      }
     ],
   },
 ]);
